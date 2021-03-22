@@ -1,4 +1,4 @@
-module github.com/castle/castle-go
+module github.com/Massad/castle-go
 
 go 1.14
 

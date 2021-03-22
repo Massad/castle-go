@@ -1,13 +1,13 @@
 # castle-go
 
-castle-go is a Go library wrapping the https://castle.io API. 
+castle-go is a Go library wrapping the https://castle.io API.
 
 **Note:** This library is currently a prototype. To see fully supported SDKs, please refer to https://docs.castle.io/baseline/
 
 ## Install
 
 ```
-go get github.com/castle/castle-go
+go get github.com/Massad/castle-go
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ package main
 import (
   "net/http"
   "log"
-  "github.com/castle/castle-go/castle"
+  "github.com/Massad/castle-go/castle"
 )
 
 func main() {
