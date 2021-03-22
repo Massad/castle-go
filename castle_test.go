@@ -13,7 +13,7 @@ import (
 func configureRequest() *http.Request {
 	req := httptest.NewRequest("GET", "/", nil)
 
-	req.Header.Set("HTTP_X_CASTLE_CLIENT_ID", "__cid_header")
+	req.Header.Set("X-Castle-Client-Id", "__cid_header")
 	req.Header.Set("X-FORWARDED-FOR", "6.6.6.6, 3.3.3.3, 8.8.8.8")
 	req.Header.Set("USER-AGENT", "some-agent")
 
@@ -184,7 +184,7 @@ func TestContextFromRequest(t *testing.T) {
 	assert.Equal(t, "__cid_value", ctx.ClientID)
 
 	// prefers header to cookie
-	req.Header.Set("HTTP_X_CASTLE_CLIENT_ID", "__cid_header")
+	req.Header.Set("X-Castle-Client-Id", "__cid_header")
 
 	ctx = castle.ContextFromRequest(req)
 	assert.Equal(t, "__cid_header", ctx.ClientID)
